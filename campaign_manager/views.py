@@ -32,7 +32,7 @@ def agent_detail(request, pk):
         return Response(serializer.data)
     
     if request.method == 'PUT':
-        serializer = AgentSerializer(agent, data=request.data)
+        serializer = AgentSerializer(agent, data=request.data, partial=True)  
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -71,7 +71,7 @@ def campaign_detail(request, pk):
         return Response(serializer.data)
     
     if request.method == 'PUT':
-        serializer = CampaignSerializer(campaign, data=request.data)
+        serializer = CampaignSerializer(campaign, data=request.data,partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -125,7 +125,7 @@ def campaign_result_detail(request, pk):
         result_name = f"{campaign.name} result"
         data = request.data.copy()
         data['name'] = result_name  
-        serializer = CampaignResultSerializer(result, data=data)
+        serializer = CampaignResultSerializer(result, data=data,partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
