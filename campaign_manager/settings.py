@@ -11,15 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import django_heroku
+
 import os
-import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
-}
 
-
-django_heroku.settings(locals())
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,6 +37,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'rishika123403',  # Replace with your database name
+        'USER': 'rishika123403',  # Replace with your PythonAnywhere username
+        'PASSWORD': 'rishujiya@1234',  # Replace with your database password
+        'HOST': 'rishika123403.mysql.pythonanywhere-services.com',  # PythonAnywhere MySQL host
+        'PORT': '3306',  # Default MySQL port
+    }
+}
 
 # Application definition
 
