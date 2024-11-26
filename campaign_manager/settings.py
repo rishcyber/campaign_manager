@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-2ui(-%&9=gu!w*2w8ttuua%))&3dxftp&l!53(s=$9@32(+0v3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "rishika123403.pythonanywhere"]
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
